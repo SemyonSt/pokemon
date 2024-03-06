@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    line-height: normal;
 }
+.container {
+  padding: 0px 150px;
+  max-width: 1280px;
+  height: 584px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 54px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.head-name {
+  border: 1px solid #fff;
+  padding: 7px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 113%;
+  text-transform: uppercase;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 100%;
+  width: 142px;
+}
+
+.info-name {
+  font-weight: 600;
+  font-size: 12px;
+
+}
+
+.icon {
+  /* width: 25px; 
+  height: 31px; 
+  background-image: url("/public/Icon1.svg"); */
+
+  margin-right: 9px;
+}
+
+.chips-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-pokemon {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 44px 44px 16px 44px;
+  width: 396px;
+  height: 440px;
+  background: #000;
+}
+
+.head-card {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+  color: #a0a0a0;
+}
+
+.photo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 396px;
+  height: 200px;
+}
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.info-card {
+  font-weight: 500;
+  font-size: 17px;
+  color: #a0a0a0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.info-card li {
+  margin-bottom: 5px; /* Задайте желаемый интервал между элементами li */
+}
+
+.btn-chips {
+  width: 484px;
+}
+
+.btn {
+
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  border-radius: 44px;
+  padding: 20px;
+  background: #1986ec;
+  margin-right: 3px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #fff;
 }
