@@ -25,19 +25,14 @@ const PokemonCard = ({ infoPokemon, selectedPokemon }) => {
                     gutterBottom variant="h4" component="div">
                     {selectedPokemon.name[0].toUpperCase() + selectedPokemon.name.slice(1)}
                 </Typography>
-                <CardMedia
-                    sx={{
-                        padding: '0',
-                        margin: '0',
+                <div className='img'>
+                    <CardMedia
+                
+                        component="img"
+                        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selectedPokemon.url.split('/')[6]}.png`}
+                    />
+                </div>
 
-                    }}
-                    component="img"
-                    alt="green iguana"
-                    height="200px"
-                    width="396px"
-                    image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selectedPokemon.url.split('/')[6]}.png`}
-
-                />
                 <List
                     sx={{
                         padding: '0',

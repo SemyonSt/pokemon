@@ -18,6 +18,9 @@ const ChipsContainer = () => {
                 axios.get(response.data.results[0].url)
                     .then(response => {
                         setInfoPokemon(response.data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching pokemons:', error);
                     });
             });
     }, []);
@@ -31,19 +34,22 @@ const ChipsContainer = () => {
                         ...response.data
                     }));
                 })
+                .catch(error => {
+                    console.error('Ошибка при получении деталей покемона:', error);
+                });
         }
 
     }, [selectedPokemon, click])
-    
+
     if (!infoPokemon) {
         return <div>Loading...</div>;
     }
 
     return (
-        
+
         <div className="chips-container">
             <PokemonChips pokemons={pokemons} setSelectedPokemon={setSelectedPokemon} setClick={setClick} />
-            <PokemonCard infoPokemon={infoPokemon} selectedPokemon={selectedPokemon}/>
+            <PokemonCard infoPokemon={infoPokemon} selectedPokemon={selectedPokemon} />
         </div>
     )
 }
