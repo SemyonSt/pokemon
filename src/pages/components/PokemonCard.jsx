@@ -1,30 +1,61 @@
-const PokemonCard = ({infoPokemon, selectedPokemon}) => {
-    console.log('INFOOOOOO', infoPokemon)
-    if (!infoPokemon) {
-        return <div>Loading...</div>;
-    }
-    console.log('lalalala', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selectedPokemon.url.split('/')[6]}.png`)
+/* eslint-disable jsx-a11y/alt-text */
+import { List, Typography, CardMedia, Card } from '@mui/material';
+
+const PokemonCard = ({ infoPokemon, selectedPokemon }) => {
+
     return (
-        <div className='card-pokemon'>
-            <div className='head-card'>
-            {infoPokemon.name[0].toUpperCase() + infoPokemon.name.slice(1)}
-            </div>
-            <div className='photo-card'>
-            <img className='img' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selectedPokemon.url.split('/')[6]}.png`} />
+        <>
+            <Card sx={{
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'flex-start',
+                justifyContent: 'space-between',
+                flexDirection: 'column',
+                padding: '44px 44px 16px 44px',
+                width: '396px',
+                height: '440px',
+                background: '#000',
+            }}>
+                <Typography sx={{
+                    fontWeight: '700',
+                    fontSize: '48px',
+                    lineHeight: '100%',
+                    color: '#a0a0a0',
+                }}
+                    gutterBottom variant="h4" component="div">
+                    {selectedPokemon.name[0].toUpperCase() + selectedPokemon.name.slice(1)}
+                </Typography>
+                <CardMedia
+                    sx={{
+                        padding: '0',
+                        margin: '0',
 
+                    }}
+                    component="img"
+                    alt="green iguana"
+                    height="200px"
+                    width="396px"
+                    image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selectedPokemon.url.split('/')[6]}.png`}
 
-            </div>
+                />
+                <List
+                    sx={{
+                        padding: '0',
+                        margin: '0',
+                    }}
+                >
+                    <ul className='info-card'>
+                        <li>Снялся в {infoPokemon.moves.length} сериях </li>
+                        <li>Id: {infoPokemon.id}</li>
+                        <li>height: {infoPokemon.height}</li>
+                        <li>attack: {infoPokemon?.stats?.find(stat => stat.stat.name === 'attack')?.base_stat}</li>
+                    </ul>
 
-            <ul className='info-card'>
-                <li>Снялся в {infoPokemon.moves.length} сериях </li>
-                <li>Id: {infoPokemon.id}</li>
-                <li>height: {infoPokemon.height}</li>
-                <li>attack: {infoPokemon?.stats?.find(stat => stat.stat.name === 'attack')?.base_stat}</li>
-            </ul>
+                </List>
 
+            </Card >
+        </>
 
-
-        </div>
     )
 }
 

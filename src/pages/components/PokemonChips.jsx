@@ -1,18 +1,36 @@
+import * as React from 'react';
+
+import { Button, Stack } from '@mui/material';
+
 const PokemonChips = ({ pokemons, setSelectedPokemon, setClick }) => {
-    console.log('INNN', pokemons);
-    const click =(pokemon) => {
+    const click = (pokemon) => {
         setClick(true)
         setSelectedPokemon(pokemon)
     }
     return (
-        <div className='btn-chips'>
+        <Stack direction="row" useFlexGap flexWrap="wrap" sx={{ width: '484px', marginRight: '6px' }}>
             {pokemons.map((pokemon, index) => (
-                <button className='btn' key={index} onClick={() => click(pokemon)}>
-                    {pokemon.name}
+               
+                <Button variant="contained"
+                    sx={{
+                        cursor: 'pointer',
+                        borderRadius: '44px',
+                        padding: '20px',
+                        background: '#1986ec',
+                        marginRight: '6px',
+                        marginBottom: '10px',
+                        fontWeight: '500',
+                        fontSize: '20px',
+                        lineHeight: '100%',
+                        color: '##fff',
+                        textTransform: 'none' 
+                    }}
+                    key={index}
+                    onClick={() => click(pokemon)} >{pokemon.name}
+                </Button>
 
-                </button>
             ))}
-        </div>
+        </Stack>
     );
 };
 

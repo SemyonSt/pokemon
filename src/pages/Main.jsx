@@ -1,10 +1,20 @@
 import React from "react";
+import { Container, Typography } from '@mui/material';
 
 import ChipsContainer from "./components/ChipsContainer";
 
 const Main = () => {
     return (
-        <div className="container">
+        <Container sx={{
+            padding: '0px 150px',
+            maxWidth: 1280,
+            height: 584,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            color: '#fff',
+        }}>
             <div className="head">
 
                 <div className="head-name">Покемоны api</div>
@@ -20,12 +30,16 @@ const Main = () => {
                             <path d="M4.64343 6.87161L5.13513 5.94227L1.51993 3.85764L1.02823 4.78698L4.64343 6.87161Z" fill="#1986EC" />
                         </svg>
                     </div>
-                    <div className="info-name">Нажмите на нужное Покемона</div>
+                    <Typography sx={{
+                        fontWeight: 600,
+                        fontSize: 12,
+                        lineHeight: '100%',
+                    }}>Нажмите на нужное Покемона</Typography>
                 </div>
 
             </div>
             <ChipsContainer />
-        </div>
+        </Container>
     )
 }
 
